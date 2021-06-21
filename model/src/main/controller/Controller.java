@@ -26,4 +26,18 @@ public class Controller {
         carId = 1;
         customerId = 1;
     }
+
+    // Method to add a new car to the system
+    public void addNewCar(String name, String brand, String numberPlate, int rentPricePerDay, int costPrice, String color) {
+        Car car = new Car(carId++, name, brand, numberPlate, rentPricePerDay, costPrice, color);
+        allCars.add(car);
+        availableCars.add(car);
+    }
+
+    // Method to add a new customer to the system
+    public void addNewCustomer(String name, int age, String licenseNumber, String nationalIDNumber) {
+        Customer customer = new Customer(customerId++, name, age, licenseNumber, nationalIDNumber);
+        allCustomers.add(customer);
+    }
+
 }

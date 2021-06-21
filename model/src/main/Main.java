@@ -87,7 +87,7 @@ public class Main {
                     int costPrice = in.nextInt();
                     in.nextLine();
                     System.out.print("Color: ");
-                    String color = in.nextLine(); 
+                    String color = in.nextLine();
                     break;
                 case 0:
                     System.out.println();
