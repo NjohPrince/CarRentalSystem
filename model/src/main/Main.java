@@ -70,6 +70,9 @@ public class Main {
             // Action to be done - determined by the 'option' the user selects.
             switch (option) {
                 case 1 -> {
+                    break;
+                }
+                case 2 -> {
                     System.out.println("\nEnter car details:");
                     System.out.print("Name: ");
                     String name = in.nextLine();
@@ -93,6 +96,14 @@ public class Main {
                         System.out.println("\nSorry car already exist with license plate number " + plateNumber);
                     }
                 }
+                case 3 -> {
+
+                    break;
+                }
+                case 4 -> {
+
+                    break;
+                }
                 case 9 -> {
                     System.out.println("Enter customer details:");
                     System.out.print("Name: ");
@@ -104,7 +115,7 @@ public class Main {
                     String licenseNumber = in.nextLine();
                     System.out.print("N_ID number: ");
                     String nationalIDNumber = in.nextLine();
-                    Customer customer_check = controller.findCustomer(licenseNumber);
+                    Customer customer_check = controller.findCustomer(licenseNumber, nationalIDNumber);
                     if (customer_check == null) {
                         controller.addNewCustomer(customerName, customerAge, licenseNumber, nationalIDNumber);
                         System.out.println("\nSuccessfully added new customer");

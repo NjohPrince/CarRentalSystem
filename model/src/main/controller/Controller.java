@@ -53,15 +53,28 @@ public class Controller {
     }
 
     // Method to find a particular customer using the customer's license number, hence checking if the customer exists or not
-    public Customer findCustomer(String licenseNumber){
+    public Customer findCustomer(String licenseNumber, String nationalID){
         Customer customer = null;
         for(Customer customerX: allCustomers) {
-            if(customerX.getLicenseNumber().equals(licenseNumber)) {
+            if(customerX.getLicenseNumber().equals(licenseNumber) || customerX.getNationalIDNumber().equals(nationalID)) {
                 customer = customerX;
                 break;
             }
         }
         return customer;
     }
+
+    // Method to check if there are any cars within the system or available for rent based on the parameter it receives
+    private void check(List<Car> availableCars) {
+        if (availableCars.size() == 0) {
+            System.out.println("There are no cars/No cars available");
+            return;
+        }
+        for(int i = 1; i <= availableCars.size(); i++) {
+            System.out.println(i + ". " + availableCars.get(i-1));
+        }
+    }
+
+    
 
 }
