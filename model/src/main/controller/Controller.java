@@ -100,4 +100,32 @@ public class Controller {
         }
         return null;
     }
+
+    public void modifyCarDetails(String licensePlateNumber) {
+        Car car = findCar(licensePlateNumber);
+        if(car == null) {
+            System.out.println("Sorry no car found with license plate number: " + licensePlateNumber);
+        } else {
+            Scanner sc = new Scanner(System.in);
+            int choice;
+            System.out.println();
+            System.out.println("1. Color");
+            System.out.println("2. Price");
+            System.out.println("3. RentPerDay");
+            System.out.println("4. LicenseNumberPlate");
+            System.out.println("5. Color and Price");
+            System.out.println("6. Price and RentPerDay");
+            System.out.println("7. Color and RentPerDay");
+            System.out.println("8. Color and licensePlateNumber");
+            System.out.println("9. LicensePlateNumber and RentPerDay");
+            System.out.println("10. Color, LicensePlateNumber and RentPerDay");
+            System.out.println("11. All car properties [Excluding name and brand properties]");
+            System.out.println("\nWhat do you want to edit? ");
+            choice = sc.nextInt();
+
+            String numberPlate, color;
+            int rentPricePerDay, costPrice;
+        }
+    }
+
 }
