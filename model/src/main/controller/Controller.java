@@ -153,6 +153,15 @@ public class Controller {
                     car.setNumberPlate(numberPlate);
                     System.out.println("Successfully Updated.");
                     break;
+                case 5:
+                    System.out.println();
+                    color = sc.nextLine();
+                    costPrice = sc.nextInt();
+                    sc.nextLine();
+                    car.setCostPrice(costPrice);
+                    car.setColor(color);
+                    System.out.println("Successfully Updated.");
+                    break;
                 default:
                     System.out.println("Invalid Input... Try again!");
             }
