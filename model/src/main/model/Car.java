@@ -36,5 +36,73 @@ public class Car {
         this.color = color;
     }
 
+    /**
+     * Getters and Setters
+     */
+
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getNumberPlate() {
+        return numberPlate;
+    }
+
+    public void setNumberPlate(String numberPlate) {
+        this.numberPlate = numberPlate;
+    }
+
+    public int getRentPricePerDay() {
+        return rentPricePerDay;
+    }
+
+    public void setRentPricePerDay(int rentPricePerDay) {
+        this.rentPricePerDay = rentPricePerDay;
+    }
+
+    public int getCostPrice() {
+        return costPrice;
+    }
+
+    public void setCostPrice(int costPrice) {
+        this.costPrice = costPrice;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Customer getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(Customer currentUser) {
+        this.currentUser = currentUser;
+    }
+
     
 }
