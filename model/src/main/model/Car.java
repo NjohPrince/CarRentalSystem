@@ -104,5 +104,18 @@ public class Car {
         this.currentUser = currentUser;
     }
 
-    
+    /**
+     * Returns the car details into a well structured string [sentence]
+     * @return
+     */
+    @Override
+    public String toString() {
+        return  "carId=" + carId +
+                ", name='" + name + '\'' +
+                ", brand='" + brand + '\'' +
+                ", numberPlate='" + numberPlate + '\'' +
+                ", rentPricePerDay=" + rentPricePerDay +
+                ", costPrice=" + costPrice +
+                ", color='" + color + '\'';
+    }
 }
