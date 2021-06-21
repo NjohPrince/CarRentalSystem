@@ -238,6 +238,12 @@ public class Controller {
         return false;
     }
 
-    
+    // Method to bind a car to a customer
+    public void bindCarToCustomer(Customer customer, Car car){
+        customer.getCarsRented().add(car);
+        car.setCurrentUser(customer);
+        rentedCars.add(car);
+        availableCars.remove(car);
+    }
 
 }
