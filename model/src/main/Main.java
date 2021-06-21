@@ -118,6 +118,10 @@ public class Main {
                     System.out.println();
                     System.out.print("Enter the car's license plate number: ");
                     String licensePlateNumber2 = in.nextLine();
+                    controller.modifyCarDetails(licensePlateNumber2);
+                    break;
+                case 7:
+
                     break;
                 case 11:
                     System.out.println("Enter customer details:");

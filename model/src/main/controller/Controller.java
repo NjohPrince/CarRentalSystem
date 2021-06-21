@@ -101,6 +101,7 @@ public class Controller {
         return null;
     }
 
+    // Method to modify a car's details based upon choice selection
     public void modifyCarDetails(String licensePlateNumber) {
         Car car = findCar(licensePlateNumber);
         if(car == null) {
@@ -228,5 +229,15 @@ public class Controller {
             }
         }
     }
+
+    // Method to check if a given license number belongs to a customer within the system
+    public boolean checkIfCustomer(String licenseNumber){
+        for(Customer customer: allCustomers) {
+            if (customer.getLicenseNumber().equals(licenseNumber)) return true;
+        }
+        return false;
+    }
+
+    
 
 }
