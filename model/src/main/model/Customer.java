@@ -1,5 +1,8 @@
 package main.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Class for keeping customer details, getting information about customer and setting up details
  */
@@ -11,7 +14,7 @@ public class Customer {
     private int age;
     private String licenseNumber;
     private String nationalIDNumber;
-
+    private List<Car> carsRented;
 
     /**
      *
@@ -27,7 +30,7 @@ public class Customer {
         this.age = age;
         this.licenseNumber = licenseNumber;
         this.nationalIDNumber = nationalIDNumber;
-
+        carsRented = new ArrayList<>();
     }
 
     /**
@@ -74,6 +77,10 @@ public class Customer {
 
     public void setNationalIDNumber(String nationalIDNumber) {
         this.nationalIDNumber = nationalIDNumber;
+    }
+
+    public List<Car> getCarsRented() {
+        return carsRented;
     }
 
     /**
