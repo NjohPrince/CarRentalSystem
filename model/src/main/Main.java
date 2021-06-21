@@ -73,6 +73,21 @@ public class Main {
             // Action to be done - determined by the 'option' the user selects.
             switch(option) {
                 case 1:
+                    System.out.println("\nEnter car details:");
+                    System.out.print("Name: ");
+                    String name = in.nextLine();
+                    System.out.print("Brand: ");
+                    String brand = in.nextLine();
+                    System.out.print("License plate number: ");
+                    String plateNumber = in.nextLine();
+                    System.out.print("Rent price per day: ");
+                    int pricePerDay = in.nextInt();
+                    in.nextLine();
+                    System.out.print("Cost price: ");
+                    int costPrice = in.nextInt();
+                    in.nextLine();
+                    System.out.print("Color: ");
+                    String color = in.nextLine(); 
                     break;
                 case 0:
                     System.out.println();
