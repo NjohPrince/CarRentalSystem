@@ -7,7 +7,7 @@ import main.model.Customer;
 import java.util.Scanner;
 
 /**
- * @author ProgrammingGeek - Njoh Noh Prince Junior
+ * @author ProgrammingGeek - Njoh Noh Prince Junior(Software Eng. and Developer)
  * @since 21-06-2021
  *
  * Car Rent Management System - Demonstrating OOP in Java Programming languages
@@ -113,6 +113,11 @@ public class Main {
                     controller.removeCar(licensePlateNumber);
 
                     //Car car = controller.removeCar(licensePlateNumber);
+                    break;
+                case 6:
+                    System.out.println();
+                    System.out.print("Enter the car's license plate number: ");
+                    String licensePlateNumber2 = in.nextLine();
                     break;
                 case 11:
                     System.out.println("Enter customer details:");
