@@ -18,6 +18,7 @@ public class Main {
 
         Controller controller = new Controller();
 
+        System.out.println();
         System.out.println("***********************************************************************");
         System.out.println("***********************************************************************");
         System.out.println("**                                                                   **");
@@ -103,6 +104,11 @@ public class Main {
                 case 4 -> {
                     System.out.println();
                     controller.displayAvailableCars();
+                }
+                case 5 -> {
+                    System.out.println();
+                    System.out.print("Input car's license plate number: ");
+                    String licensePlateNumber = in.nextLine();
                 }
                 case 9 -> {
                     System.out.println("Enter customer details:");
