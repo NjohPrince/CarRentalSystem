@@ -125,6 +125,13 @@ public class Controller {
 
             String numberPlate, color;
             int rentPricePerDay, costPrice;
+
+            switch (choice) {
+                case 1:
+                    break;
+                default:
+                    System.out.println("Invalid Input... Try again!");
+            }
         }
     }
 
