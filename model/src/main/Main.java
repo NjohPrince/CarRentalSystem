@@ -48,17 +48,19 @@ public class Main {
             System.out.println("  5. Delete a car");
             System.out.println("  6. Modify a car's details");
             System.out.println("  7. Rent car(s)");
-            System.out.println("  8 Show a car's details");
+            System.out.println("  8. Show a car's details");
+            System.out.println("  9. Display cars by category");
+            System.out.println("  10. Get total number of cars by name");
 
             System.out.println("\nMANAGE CUSTOMERS\n");
 
-            System.out.println("9. Add a new customer");
-            System.out.println("10. View all customers");
-            System.out.println("11. View a customer's rent details");
-            System.out.println("12. Clear a customer's rent");
-            System.out.println("13. Remove customer from system");
-            System.out.println("14. Show all rents");
-            System.out.println("15. Show a customer's details");
+            System.out.println("11. Add a new customer");
+            System.out.println("12. View all customers");
+            System.out.println("13. View a customer's rent details");
+            System.out.println("14. Clear a customer's rent");
+            System.out.println("15. Remove customer from system");
+            System.out.println("16. Show all rents");
+            System.out.println("17. Show a customer's details");
 
             System.out.println("0. Terminate/Exit System");
 
@@ -112,7 +114,7 @@ public class Main {
 
                     //Car car = controller.removeCar(licensePlateNumber);
                     break;
-                case 9:
+                case 11:
                     System.out.println("Enter customer details:");
                     System.out.print("Name: ");
                     String customerName = in.nextLine();
