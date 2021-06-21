@@ -181,6 +181,14 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
                     break;
+                case 8:
+                    System.out.println();
+                    color = sc.nextLine();
+                    licensePlateNumber = sc.nextLine();
+                    car.setColor(color);
+                    car.setNumberPlate(licensePlateNumber);
+                    System.out.println("Successfully Updated.");
+                    break;
                 default:
                     System.out.println("Invalid Input... Try again!");
             }
