@@ -131,6 +131,7 @@ public class Main {
                     break;
                 case 9:
                     System.out.println();
+                    controller.getCarsByBrand();
                     break;
                 case 10:
                     System.out.println();

@@ -73,6 +73,27 @@ public class Controller {
             System.out.println("Number of cars with name " + name + ": " + count);
         }
     }
+    // Method to get cars by category/brand
+    public void getCarsByBrand() {
+        String brand;
+        int count = 0;
+        boolean test = false;
+        System.out.print("Enter brand: ");
+        Scanner scan = new Scanner(System.in);
+        brand = scan.nextLine();
+        for(Car car: allCars) {
+            if(car.getBrand().equals(brand)) {
+                test = true;
+                count++;
+                System.out.println(car);
+            }
+        }
+        if(!test) {
+            System.out.println("Sorry no car available with brand: " + brand);
+        } else {
+            System.out.println("Number of cars with brand " + brand + ": " + count);
+        }
+    }
 
     // Method to find a particular customer using the customer's license number, hence checking if the customer exists or not
     public Customer findCustomer(String licenseNumber, String nationalID){
