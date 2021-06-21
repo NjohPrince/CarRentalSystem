@@ -40,4 +40,28 @@ public class Controller {
         allCustomers.add(customer);
     }
 
+    // Method to find a particular car using it's license plate number, hence checking if it exists or not
+    public Car findCar(String licensePlateNumber){
+        Car car = null;
+        for(Car carX: allCars) {
+            if(carX.getNumberPlate().equals(licensePlateNumber)) {
+                car = carX;
+                break;
+            }
+        }
+        return car;
+    }
+
+    // Method to find a particular customer using the customer's license number, hence checking if the customer exists or not
+    public Customer findCustomer(String licenseNumber){
+        Customer customer = null;
+        for(Customer customerX: allCustomers) {
+            if(customerX.getLicenseNumber().equals(licenseNumber)) {
+                customer = customerX;
+                break;
+            }
+        }
+        return customer;
+    }
+
 }
