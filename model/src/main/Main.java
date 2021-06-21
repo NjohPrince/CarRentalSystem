@@ -131,9 +131,10 @@ public class Main {
                     break;
                 case 9:
                     System.out.println();
-                    controller.getCarsByName();
                     break;
                 case 10:
+                    System.out.println();
+                    controller.getCarsByName();
                     break;
                 case 11:
                     System.out.println("Enter customer details:");

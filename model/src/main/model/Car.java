@@ -40,14 +40,6 @@ public class Car {
      * Getters and Setters
      */
 
-    public int getCarId() {
-        return carId;
-    }
-
-    public void setCarId(int carId) {
-        this.carId = carId;
-    }
-
     public String getName() {
         return name;
     }

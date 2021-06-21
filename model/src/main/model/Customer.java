@@ -39,14 +39,6 @@ public class Customer {
      * @setValues
      */
 
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
     public String getName() {
         return name;
     }

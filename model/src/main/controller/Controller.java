@@ -54,7 +54,24 @@ public class Controller {
 
     // Method to get cars by name
     public void getCarsByName() {
-
+        String name;
+        int count = 0;
+        boolean test = false;
+        System.out.print("Enter name: ");
+        Scanner scan = new Scanner(System.in);
+        name = scan.nextLine();
+        for(Car car: allCars) {
+            if(car.getName().equals(name)) {
+                test = true;
+                count++;
+                System.out.println(car);
+            }
+        }
+        if(!test) {
+            System.out.println("Sorry no car available with name: " + name);
+        } else {
+            System.out.println("Number of cars with name " + name + ": " + count);
+        }
     }
 
     // Method to find a particular customer using the customer's license number, hence checking if the customer exists or not
@@ -214,33 +231,33 @@ public class Controller {
             int rentPricePerDay, costPrice;
 
             switch (choice) {
-                case 1:
+                case 1 -> {
                     System.out.println();
                     color = sc.nextLine();
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.println();
                     costPrice = sc.nextInt();
                     sc.nextLine();
                     car.setCostPrice(costPrice);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.println();
                     rentPricePerDay = sc.nextInt();
                     sc.nextLine();
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println();
                     numberPlate = sc.nextLine();
                     car.setNumberPlate(numberPlate);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.println();
                     color = sc.nextLine();
                     costPrice = sc.nextInt();
@@ -248,8 +265,8 @@ public class Controller {
                     car.setCostPrice(costPrice);
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     System.out.println();
                     costPrice = sc.nextInt();
                     sc.nextLine();
@@ -258,8 +275,8 @@ public class Controller {
                     car.setCostPrice(costPrice);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 7:
+                }
+                case 7 -> {
                     System.out.println();
                     color = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -267,16 +284,16 @@ public class Controller {
                     car.setColor(color);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 8:
+                }
+                case 8 -> {
                     System.out.println();
                     color = sc.nextLine();
                     licensePlateNumber = sc.nextLine();
                     car.setColor(color);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 9:
+                }
+                case 9 -> {
                     System.out.println();
                     licensePlateNumber = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -284,8 +301,8 @@ public class Controller {
                     car.setNumberPlate(licensePlateNumber);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 10:
+                }
+                case 10 -> {
                     System.out.println();
                     color = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -295,8 +312,8 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                    break;
-                case 11:
+                }
+                case 11 -> {
                     System.out.println();
                     color = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -309,9 +326,8 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                    break;
-                default:
-                    System.out.println("Sorry Invalid Input...");
+                }
+                default -> System.out.println("Sorry Invalid Input...");
             }
         }
     }
