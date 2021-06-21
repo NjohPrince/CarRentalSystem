@@ -189,6 +189,15 @@ public class Controller {
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
                     break;
+                case 9:
+                    System.out.println();
+                    licensePlateNumber = sc.nextLine();
+                    rentPricePerDay = sc.nextInt();
+                    sc.nextLine();
+                    car.setNumberPlate(licensePlateNumber);
+                    car.setRentPricePerDay(rentPricePerDay);
+                    System.out.println("Successfully Updated.");
+                    break;
                 default:
                     System.out.println("Invalid Input... Try again!");
             }
