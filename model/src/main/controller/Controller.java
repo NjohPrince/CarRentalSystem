@@ -128,6 +128,10 @@ public class Controller {
 
             switch (choice) {
                 case 1:
+                    System.out.println();
+                    color = sc.nextLine();
+                    car.setColor(color);
+                    System.out.println("Successfully Updated.");
                     break;
                 default:
                     System.out.println("Invalid Input... Try again!");
