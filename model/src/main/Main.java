@@ -130,6 +130,8 @@ public class Main {
                     controller.showCar(in.nextLine());
                     break;
                 case 9:
+                    System.out.println();
+                    controller.getCarsByName();
                     break;
                 case 10:
                     break;
@@ -175,6 +177,10 @@ public class Main {
                 case 16:
                     System.out.println();
                     controller.showAllRents();
+                    break;
+                case 17:
+                    System.out.print("Input customer's license number: ");
+                    controller.showCustomer(in.nextLine());
                     break;
                 case 0:
                     System.out.println();

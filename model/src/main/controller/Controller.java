@@ -52,6 +52,11 @@ public class Controller {
         return car;
     }
 
+    // Method to get cars by name
+    public void getCarsByName() {
+
+    }
+
     // Method to find a particular customer using the customer's license number, hence checking if the customer exists or not
     public Customer findCustomer(String licenseNumber, String nationalID){
         Customer customer = null;
@@ -119,6 +124,13 @@ public class Controller {
             else
                 System.out.println(customer.getCarsRented());
         }
+    }
+
+    // Methos to display details of a customer
+    public void showCustomer(String licenseNumber){
+        Customer customer = findCustomer(licenseNumber);
+        if (customer == null) System.out.println("No customer found with license number " + licenseNumber);
+        else System.out.println(customer);
     }
 
     // Method to release car from rent
