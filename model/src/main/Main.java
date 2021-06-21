@@ -163,6 +163,19 @@ public class Main {
                 case 14:
                     controller.releaseCarFromRent(in.nextLine());
                     break;
+                case 15:
+                    System.out.print("Input customer's license number: ");
+                    String rLicenseNumber = in.nextLine();
+                    Customer customer = controller.removeCustomer(rLicenseNumber);
+                    if (customer == null)
+                        System.out.println("Sorry no customer available with license number: " + rLicenseNumber);
+                    else
+                        System.out.println("CUSTOMER DETAILS: " + customer + " SUCCESSFULLY REMOVED");
+                    break;
+                case 16:
+                    System.out.println();
+                    controller.showAllRents();
+                    break;
                 case 0:
                     System.out.println();
                     System.out.println("Thank you for using PJ's Car Rental System!");

@@ -138,6 +138,27 @@ public class Controller {
         }
     }
 
+    // Method to remove a customer from the system
+    public Customer removeCustomer(String licenseNumber) {
+        Customer toBeRemoved = findCustomer(licenseNumber);
+        if (toBeRemoved == null)
+            return null;
+        allCustomers.remove(toBeRemoved);
+        return toBeRemoved;
+    }
+
+    // Method to show all rents
+    public void showAllRents(){
+        if(rentedCars.size() == 0)
+            System.out.println("No car rented out yet...");
+        else {
+            System.out.println("Customer License Number    Car License Plate Number");
+            for (Car car: rentedCars){
+                System.out.println(car.getCurrentUser().getLicenseNumber() + "                      " + car.getNumberPlate());
+            }
+        }
+    }
+
     // Method to remove a car from the system
     public Car removeCar(String licensePlateNumber) {
         Car toBeRemoved = findCar(licensePlateNumber);
