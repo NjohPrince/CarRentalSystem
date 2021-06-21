@@ -1,5 +1,6 @@
 package main;
 
+import main.controller.Controller;
 import main.model.Car;
 import main.model.Customer;
 
@@ -15,6 +16,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        /**
+         * New instance of the controller - Class with system operations and information storage
+         */
+        Controller controller = new Controller();
+
         System.out.println("***********************************************************************");
         System.out.println("***********************************************************************");
         System.out.println("**                                                                   **");
@@ -28,6 +34,8 @@ public class Main {
         int option;
         Scanner in = new Scanner(System.in);
         do {
+
+            // Displaying a list of available operations/system manipulations.
             System.out.println("\nAvailable Options");
             System.out.println("-----------------");
 
@@ -54,7 +62,7 @@ public class Main {
             System.out.println("14. Show all rents");
             System.out.println("15. Show a customer's details");
 
-            System.out.println("0. Exit System");
+            System.out.println("0. Terminate/Exit System");
 
             System.out.println();
 
@@ -62,6 +70,7 @@ public class Main {
             option = in.nextInt();
             in.nextLine();
 
+            // Action to be done - determined by the 'option' the user selects.
             switch(option) {
                 case 1:
                     break;
@@ -71,7 +80,7 @@ public class Main {
                     break;
                 default:
                     System.out.println();
-                    System.out.println("Invalid Option");
+                    System.out.println("Invalid Option... Please select a valid operation from the list provided!");
                     System.out.println();
             }
         } while(option != 0);
