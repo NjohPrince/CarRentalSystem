@@ -121,6 +121,23 @@ public class Controller {
         }
     }
 
+    // Method to release car from rent
+    public void releaseCarFromRent(String licensePlateNumber) {
+        Car car = findCar(licensePlateNumber);
+        if(car == null) {
+            System.out.println("Sorry no car with license plate number: " + licensePlateNumber);
+        } else {
+            if(rentedCars.contains(car)) {
+                rentedCars.remove(car);
+                availableCars.add(car);
+                car.setCurrentUser(null);
+                car.getCurrentUser().getCarsRented().remove(car);
+            } else {
+                System.out.println("Car is available, not yet given out for rent");
+            }
+        }
+    }
+
     // Method to remove a car from the system
     public Car removeCar(String licensePlateNumber) {
         Car toBeRemoved = findCar(licensePlateNumber);

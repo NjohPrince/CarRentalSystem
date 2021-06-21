@@ -160,6 +160,9 @@ public class Main {
                     System.out.println();
                     controller.getRentDetails(in.nextLine());
                     break;
+                case 14:
+                    controller.releaseCarFromRent(in.nextLine());
+                    break;
                 case 0:
                     System.out.println();
                     System.out.println("Thank you for using PJ's Car Rental System!");
