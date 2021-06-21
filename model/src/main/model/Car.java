@@ -1,5 +1,7 @@
 package main.model;
 
+import java.util.Date;
+
 /**
  * Class for keeping car details, getting information about a car and setting up details
  */
@@ -14,6 +16,8 @@ public class Car {
     private int costPrice;
     private String color;
     private Customer currentUser;
+    private Date dateOfRent;
+    private Date dateOfReturn;
 
     /**
      *
@@ -39,6 +43,22 @@ public class Car {
     /**
      * Getters and Setters
      */
+
+    public Date getDateOfRent() {
+        return dateOfRent;
+    }
+
+    public void setDateOfRent(Date dateOfRent) {
+        this.dateOfRent = dateOfRent;
+    }
+
+    public Date getDateOfReturn() {
+        return dateOfReturn;
+    }
+
+    public void setDateOfReturn(Date dateOfReturn) {
+        this.dateOfReturn = dateOfReturn;
+    }
 
     public String getName() {
         return name;

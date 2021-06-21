@@ -4,6 +4,7 @@ import main.model.Car;
 import main.model.Customer;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -180,8 +181,9 @@ public class Controller {
             if(rentedCars.contains(car)) {
                 rentedCars.remove(car);
                 availableCars.add(car);
-                car.setCurrentUser(null);
                 car.getCurrentUser().getCarsRented().remove(car);
+                car.setCurrentUser(null);
+                System.out.println("Successfully cleared rent details for " + car);
             } else {
                 System.out.println("Car is available, not yet given out for rent");
             }
@@ -202,9 +204,9 @@ public class Controller {
         if(rentedCars.size() == 0)
             System.out.println("No car rented out yet...");
         else {
-            System.out.println("Customer License Number    Car License Plate Number");
+            System.out.println("Customer License Number    Car License Plate Number    Date Of Rent");
             for (Car car: rentedCars){
-                System.out.println(car.getCurrentUser().getLicenseNumber() + "                      " + car.getNumberPlate());
+                System.out.println(car.getCurrentUser().getLicenseNumber() + "                      " + car.getNumberPlate() + "                     " + car.getDateOfRent());
             }
         }
     }
@@ -252,33 +254,33 @@ public class Controller {
             int rentPricePerDay, costPrice;
 
             switch (choice) {
-                case 1 -> {
+                case 1:
                     System.out.println();
                     color = sc.nextLine();
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
-                }
-                case 2 -> {
+                    break;
+                case 2:
                     System.out.println();
                     costPrice = sc.nextInt();
                     sc.nextLine();
                     car.setCostPrice(costPrice);
                     System.out.println("Successfully Updated.");
-                }
-                case 3 -> {
+                    break;
+                case 3:
                     System.out.println();
                     rentPricePerDay = sc.nextInt();
                     sc.nextLine();
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                }
-                case 4 -> {
+                    break;
+                case 4:
                     System.out.println();
                     numberPlate = sc.nextLine();
                     car.setNumberPlate(numberPlate);
                     System.out.println("Successfully Updated.");
-                }
-                case 5 -> {
+                    break;
+                case 5:
                     System.out.println();
                     color = sc.nextLine();
                     costPrice = sc.nextInt();
@@ -286,8 +288,8 @@ public class Controller {
                     car.setCostPrice(costPrice);
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
-                }
-                case 6 -> {
+                    break;
+                case 6:
                     System.out.println();
                     costPrice = sc.nextInt();
                     sc.nextLine();
@@ -296,8 +298,8 @@ public class Controller {
                     car.setCostPrice(costPrice);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                }
-                case 7 -> {
+                    break;
+                case 7:
                     System.out.println();
                     color = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -305,16 +307,16 @@ public class Controller {
                     car.setColor(color);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                }
-                case 8 -> {
+                    break;
+                case 8:
                     System.out.println();
                     color = sc.nextLine();
                     licensePlateNumber = sc.nextLine();
                     car.setColor(color);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                }
-                case 9 -> {
+                    break;
+                case 9:
                     System.out.println();
                     licensePlateNumber = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -322,8 +324,8 @@ public class Controller {
                     car.setNumberPlate(licensePlateNumber);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                }
-                case 10 -> {
+                    break;
+                case 10:
                     System.out.println();
                     color = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -333,8 +335,8 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                }
-                case 11 -> {
+                    break;
+                case 11:
                     System.out.println();
                     color = sc.nextLine();
                     rentPricePerDay = sc.nextInt();
@@ -347,8 +349,10 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                }
-                default -> System.out.println("Sorry Invalid Input...");
+                    break;
+                default:
+                    System.out.println("Sorry Invalid Input...");
+                    break;
             }
         }
     }
@@ -397,6 +401,8 @@ public class Controller {
                 Customer customer = findCustomer(licenseNumber);
                 Car car = findCar(licensePlateNumber);
                 bindCarToCustomer(customer, car);
+                Date date = new Date();
+                car.setDateOfRent(date);
                 System.out.println("Successfully stored rent details.");
             }else{
                 System.out.println("Car is not available.");

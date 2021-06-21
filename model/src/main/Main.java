@@ -165,6 +165,8 @@ public class Main {
                     controller.getRentDetails(in.nextLine());
                     break;
                 case 14:
+                    System.out.println();
+                    System.out.println("Enter the license plate number of the car: ");
                     controller.releaseCarFromRent(in.nextLine());
                     break;
                 case 15:
