@@ -164,7 +164,7 @@ public class Controller {
         }
     }
 
-    // Methos to display details of a customer
+    // Method to display details of a customer
     public void showCustomer(String licenseNumber){
         Customer customer = findCustomer(licenseNumber);
         if (customer == null) System.out.println("No customer found with license number " + licenseNumber);
