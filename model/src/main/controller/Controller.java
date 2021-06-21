@@ -97,6 +97,30 @@ public class Controller {
         check(allCars);
     }
 
+    // Display all customers
+    public void displayCustomers() {
+        if(allCustomers.size() == 0) {
+            System.out.println("There are no customers");
+            return;
+        }
+        for(int i = 1; i <= allCustomers.size(); i++) {
+            System.out.println(i + ". " + allCustomers.get(i-1));
+        }
+    }
+
+    // Get a customer's rent details
+    public void getRentDetails(String licenseNumber) {
+        Customer customer = findCustomer(licenseNumber);
+        if(customer == null)
+            System.out.println("Sorry no customer with license number " + licenseNumber);
+        else {
+            if(customer.getCarsRented().size() == 0)
+                System.out.println("Sorry no car has been rented yet by this customer");
+            else
+                System.out.println(customer.getCarsRented());
+        }
+    }
+
     // Method to remove a car from the system
     public Car removeCar(String licensePlateNumber) {
         Car toBeRemoved = findCar(licensePlateNumber);
@@ -248,6 +272,13 @@ public class Controller {
             if (customer.getLicenseNumber().equals(licenseNumber)) return true;
         }
         return false;
+    }
+
+    // Show a car's details
+    public void showCar(String licensePlateNumber) {
+        Car car = findCar(licensePlateNumber);
+        if(car == null) System.out.println("No car found having that license plate number " + licensePlateNumber);
+        else System.out.println(car);
     }
 
     // Method to bind a car to a customer

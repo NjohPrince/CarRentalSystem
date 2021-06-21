@@ -121,7 +121,17 @@ public class Main {
                     controller.modifyCarDetails(licensePlateNumber2);
                     break;
                 case 7:
-
+                    System.out.println();
+                    controller.rentCars(in);
+                    break;
+                case 8:
+                    System.out.println();
+                    System.out.print("Input car's license plate number: ");
+                    controller.showCar(in.nextLine());
+                    break;
+                case 9:
+                    break;
+                case 10:
                     break;
                 case 11:
                     System.out.println("Enter customer details:");
@@ -141,6 +151,14 @@ public class Main {
                     } else {
                         System.out.println("\nSorry customer already exist with license number " + licenseNumber);
                     }
+                    break;
+                case 12:
+                    System.out.println();
+                    controller.displayCustomers();
+                    break;
+                case 13:
+                    System.out.println();
+                    controller.getRentDetails(in.nextLine());
                     break;
                 case 0:
                     System.out.println();
