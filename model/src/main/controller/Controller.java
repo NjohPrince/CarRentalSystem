@@ -76,10 +76,13 @@ public class Controller {
     }
 
     // Method to check available cars for rent
-    public void checkAvailableCars() {
+    public void displayAvailableCars() {
         check(availableCars);
     }
 
-    
+    // Method to display all the cars within the system
+    public void displayTotalCars() {
+        check(allCars);
+    }
 
 }

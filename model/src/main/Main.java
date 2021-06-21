@@ -42,8 +42,8 @@ public class Main {
             System.out.println("\nMANAGE CARS\n");
 
             System.out.println("  2. Add a new car");
-            System.out.println("  3. View all cars");
-            System.out.println("  4. Check available cars for rent");
+            System.out.println("  3. View all cars within the system");
+            System.out.println("  4. Display available cars for rent");
             System.out.println("  5. Delete a car");
             System.out.println("  6. Modify a car's details");
             System.out.println("  7. Rent car(s)");
@@ -70,7 +70,7 @@ public class Main {
             // Action to be done - determined by the 'option' the user selects.
             switch (option) {
                 case 1 -> {
-                    break;
+
                 }
                 case 2 -> {
                     System.out.println("\nEnter car details:");
@@ -97,12 +97,12 @@ public class Main {
                     }
                 }
                 case 3 -> {
-
-                    break;
+                    System.out.println();
+                    controller.displayTotalCars();
                 }
                 case 4 -> {
-
-                    break;
+                    System.out.println();
+                    controller.displayAvailableCars();
                 }
                 case 9 -> {
                     System.out.println("Enter customer details:");
