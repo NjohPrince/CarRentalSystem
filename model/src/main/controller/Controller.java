@@ -85,4 +85,19 @@ public class Controller {
         check(allCars);
     }
 
+    // Method to remove a car from the system
+    public Car removeCar(String licensePlateNumber) {
+        Car toBeRemoved = findCar(licensePlateNumber);
+        if (toBeRemoved == null)
+            System.out.println("Sorry no car available with license number: " + licensePlateNumber);
+        else if(rentedCars.contains(toBeRemoved))
+            System.out.println("Sorry can not delete a rented car... Try clearing the customers rent first - OPTION 12");
+        else {
+            allCars.remove(toBeRemoved);
+            availableCars.remove(toBeRemoved);
+            System.out.println("CAR DETAILS: " + toBeRemoved + " SUCCESSFULLY REMOVED");
+            return toBeRemoved;
+        }
+        return null;
+    }
 }

@@ -70,10 +70,9 @@ public class Main {
 
             // Action to be done - determined by the 'option' the user selects.
             switch (option) {
-                case 1 -> {
-
-                }
-                case 2 -> {
+                case 1:
+                    break;
+                case 2:
                     System.out.println("\nEnter car details:");
                     System.out.print("Name: ");
                     String name = in.nextLine();
@@ -96,21 +95,24 @@ public class Main {
                     } else {
                         System.out.println("\nSorry car already exist with license plate number " + plateNumber);
                     }
-                }
-                case 3 -> {
+                    break;
+                case 3:
                     System.out.println();
                     controller.displayTotalCars();
-                }
-                case 4 -> {
+                    break;
+                case 4:
                     System.out.println();
                     controller.displayAvailableCars();
-                }
-                case 5 -> {
+                    break;
+                case 5:
                     System.out.println();
-                    System.out.print("Input car's license plate number: ");
+                    System.out.print("Input car's license plate number of car to be: ");
                     String licensePlateNumber = in.nextLine();
-                }
-                case 9 -> {
+                    controller.removeCar(licensePlateNumber);
+
+                    //Car car = controller.removeCar(licensePlateNumber);
+                    break;
+                case 9:
                     System.out.println("Enter customer details:");
                     System.out.print("Name: ");
                     String customerName = in.nextLine();
@@ -128,16 +130,15 @@ public class Main {
                     } else {
                         System.out.println("\nSorry customer already exist with license number " + licenseNumber);
                     }
-                }
-                case 0 -> {
+                    break;
+                case 0:
                     System.out.println();
                     System.out.println("Thank you for using PJ's Car Rental System!");
-                }
-                default -> {
+                    break;
+                default:
                     System.out.println();
                     System.out.println("Invalid Option... Please select a valid operation from the list provided!");
                     System.out.println();
-                }
             }
         } while(option != 0);
     }
