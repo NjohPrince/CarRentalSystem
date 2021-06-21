@@ -147,6 +147,12 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
                     break;
+                case 4:
+                    System.out.println();
+                    numberPlate = sc.nextLine();
+                    car.setNumberPlate(numberPlate);
+                    System.out.println("Successfully Updated.");
+                    break;
                 default:
                     System.out.println("Invalid Input... Try again!");
             }
