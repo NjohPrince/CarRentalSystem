@@ -75,6 +75,11 @@ public class Controller {
         }
     }
 
+    // Method to check available cars for rent
+    public void checkAvailableCars() {
+        check(availableCars);
+    }
+
     
 
 }
