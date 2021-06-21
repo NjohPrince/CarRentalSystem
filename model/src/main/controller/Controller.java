@@ -162,6 +162,16 @@ public class Controller {
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
                     break;
+                case 6:
+                    System.out.println();
+                    costPrice = sc.nextInt();
+                    sc.nextLine();
+                    rentPricePerDay = sc.nextInt();
+                    sc.nextLine();
+                    car.setCostPrice(costPrice);
+                    car.setRentPricePerDay(rentPricePerDay);
+                    System.out.println("Successfully Updated.");
+                    break;
                 default:
                     System.out.println("Invalid Input... Try again!");
             }
