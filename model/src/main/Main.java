@@ -16,9 +16,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        /**
-         * New instance of the controller - Class with system operations and information storage
-         */
         Controller controller = new Controller();
 
         System.out.println("***********************************************************************");
@@ -71,8 +68,8 @@ public class Main {
             in.nextLine();
 
             // Action to be done - determined by the 'option' the user selects.
-            switch(option) {
-                case 1:
+            switch (option) {
+                case 1 -> {
                     System.out.println("\nEnter car details:");
                     System.out.print("Name: ");
                     String name = in.nextLine();
@@ -88,15 +85,42 @@ public class Main {
                     in.nextLine();
                     System.out.print("Color: ");
                     String color = in.nextLine();
-                    break;
-                case 0:
+                    Car car_check = controller.findCar(plateNumber);
+                    if (car_check == null) {
+                        controller.addNewCar(name, brand, plateNumber, pricePerDay, costPrice, color);
+                        System.out.println("\nSuccessfully added new car");
+                    } else {
+                        System.out.println("\nSorry car already exist with license plate number " + plateNumber);
+                    }
+                }
+                case 9 -> {
+                    System.out.println("Enter customer details:");
+                    System.out.print("Name: ");
+                    String customerName = in.nextLine();
+                    System.out.print("Age: ");
+                    int customerAge = in.nextInt();
+                    in.nextLine();
+                    System.out.print("License number: ");
+                    String licenseNumber = in.nextLine();
+                    System.out.print("N_ID number: ");
+                    String nationalIDNumber = in.nextLine();
+                    Customer customer_check = controller.findCustomer(licenseNumber);
+                    if (customer_check == null) {
+                        controller.addNewCustomer(customerName, customerAge, licenseNumber, nationalIDNumber);
+                        System.out.println("\nSuccessfully added new customer");
+                    } else {
+                        System.out.println("\nSorry customer already exist with license number " + licenseNumber);
+                    }
+                }
+                case 0 -> {
                     System.out.println();
                     System.out.println("Thank you for using PJ's Car Rental System!");
-                    break;
-                default:
+                }
+                default -> {
                     System.out.println();
                     System.out.println("Invalid Option... Please select a valid operation from the list provided!");
                     System.out.println();
+                }
             }
         } while(option != 0);
     }
