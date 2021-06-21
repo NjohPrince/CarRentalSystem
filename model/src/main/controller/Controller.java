@@ -64,6 +64,18 @@ public class Controller {
         return customer;
     }
 
+    // Method to return a particular customer - Overloading
+    public  Customer findCustomer(String licenseNumber) {
+        Customer customer = null;
+        for(Customer customerX: allCustomers) {
+            if(customerX.getLicenseNumber().equals(licenseNumber)) {
+                customer = customerX;
+                break;
+            }
+        }
+        return customer;
+    }
+
     // Method to check if there are any cars within the system or available for rent based on the parameter it receives
     private void check(List<Car> availableCars) {
         if (availableCars.size() == 0) {
@@ -244,6 +256,34 @@ public class Controller {
         car.setCurrentUser(customer);
         rentedCars.add(car);
         availableCars.remove(car);
+    }
+
+    // Method to rent a car(s) to a customer
+    public void rentCars(Scanner sc){
+        System.out.print("Input customer's license number: ");
+        String licenseNumber = sc.nextLine();
+        if(!checkIfCustomer(licenseNumber)) {
+            System.out.println("Sorry, not a customer.");
+            return;
+        }
+        System.out.print("Number of cars to be rented: ");
+        int numberOfCars = sc.nextInt();
+        sc.nextLine();
+        if(numberOfCars == 1)
+            System.out.print("Enter the license plate number of the chosen car: ");
+        else
+            System.out.println("Enter the license plate number of the chosen cars one after the other below:");
+        for (int i = 0; i < numberOfCars; i++) {
+            String licensePlateNumber = sc.nextLine();
+            if (findCar(licensePlateNumber) != null && availableCars.contains(findCar(licensePlateNumber))) {
+                Customer customer = findCustomer(licenseNumber);
+                Car car = findCar(licensePlateNumber);
+                bindCarToCustomer(customer, car);
+                System.out.println("Successfully stored rent details.");
+            }else{
+                System.out.println("Car is not available.");
+            }
+        }
     }
 
 }
