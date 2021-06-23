@@ -1,19 +1,22 @@
 package main.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Class for keeping car details, getting information about a car and setting up details
  */
 
-public class Car {
+public class Car implements Serializable {
 
     private int carId;
     private String name;
     private String brand;
     private String numberPlate;
     private int rentPricePerDay;
+    private int numberOfDays;
     private int costPrice;
+    private int totalRentPrice;
     private String color;
     private Customer currentUser;
     private Date dateOfRent;
@@ -38,6 +41,8 @@ public class Car {
         this.rentPricePerDay = rentPricePerDay;
         this.costPrice = costPrice;
         this.color = color;
+        numberOfDays = 0;
+        totalRentPrice = 0;
     }
 
     /**
@@ -50,6 +55,22 @@ public class Car {
 
     public void setDateOfRent(Date dateOfRent) {
         this.dateOfRent = dateOfRent;
+    }
+
+    public int getTotalRentPrice() {
+        return totalRentPrice;
+    }
+
+    public int getNumberOfDays() {
+        return numberOfDays;
+    }
+
+    public void setNumberOfDays(int numberOfDays) {
+        this.numberOfDays = numberOfDays;
+    }
+
+    public void setTotalRentPrice() {
+        this.totalRentPrice = this.rentPricePerDay * this.numberOfDays;
     }
 
     public Date getDateOfReturn() {

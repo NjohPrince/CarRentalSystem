@@ -4,6 +4,7 @@ import main.controller.Controller;
 import main.model.Car;
 import main.model.Customer;
 
+//import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -16,7 +17,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Controller controller = new Controller();
+          Controller controller = new Controller();
+//        Controller controller = null;
+//        try {
+//            controller = Controller.getController();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         System.out.println();
         System.out.println("***********************************************************************");
@@ -187,6 +196,7 @@ public class Main {
                     controller.showCustomer(in.nextLine());
                     break;
                 case 0:
+//                    Controller.saveController();
                     System.out.println();
                     System.out.println("Thank you for using PJ's Car Rental System!");
                     break;

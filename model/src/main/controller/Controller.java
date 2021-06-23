@@ -3,12 +3,13 @@ package main.controller;
 import main.model.Car;
 import main.model.Customer;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class Controller {
+public class Controller implements Serializable {
 
     // Attributes/fields declaration
     private final List<Car> allCars;
@@ -204,9 +205,9 @@ public class Controller {
         if(rentedCars.size() == 0)
             System.out.println("No car rented out yet...");
         else {
-            System.out.println("Customer License Number    Car License Plate Number    Date Of Rent");
+            System.out.print("Customer License Number\tCar License Plate Number\tDate Of Rent\tNumber Of Days\tTotal Price To Be Paid");
             for (Car car: rentedCars){
-                System.out.println(car.getCurrentUser().getLicenseNumber() + "                      " + car.getNumberPlate() + "                     " + car.getDateOfRent());
+                System.out.printf("%s\t %s\t %s\t %s\t %s", car.getCurrentUser().getLicenseNumber(), car.getNumberPlate(), car.getDateOfRent(), car.getNumberOfDays(), car.getTotalRentPrice());
             }
         }
     }
@@ -259,27 +260,23 @@ public class Controller {
                     color = sc.nextLine();
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 2:
                     System.out.println();
                     costPrice = sc.nextInt();
                     sc.nextLine();
                     car.setCostPrice(costPrice);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 3:
                     System.out.println();
                     rentPricePerDay = sc.nextInt();
                     sc.nextLine();
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 4:
                     System.out.println();
                     numberPlate = sc.nextLine();
                     car.setNumberPlate(numberPlate);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 5:
                     System.out.println();
                     color = sc.nextLine();
@@ -288,7 +285,6 @@ public class Controller {
                     car.setCostPrice(costPrice);
                     car.setColor(color);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 6:
                     System.out.println();
                     costPrice = sc.nextInt();
@@ -298,7 +294,6 @@ public class Controller {
                     car.setCostPrice(costPrice);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 7:
                     System.out.println();
                     color = sc.nextLine();
@@ -307,7 +302,6 @@ public class Controller {
                     car.setColor(color);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 8:
                     System.out.println();
                     color = sc.nextLine();
@@ -315,7 +309,6 @@ public class Controller {
                     car.setColor(color);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 9:
                     System.out.println();
                     licensePlateNumber = sc.nextLine();
@@ -324,7 +317,6 @@ public class Controller {
                     car.setNumberPlate(licensePlateNumber);
                     car.setRentPricePerDay(rentPricePerDay);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 10:
                     System.out.println();
                     color = sc.nextLine();
@@ -335,7 +327,6 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                    break;
                 case 11:
                     System.out.println();
                     color = sc.nextLine();
@@ -349,10 +340,7 @@ public class Controller {
                     car.setRentPricePerDay(rentPricePerDay);
                     car.setNumberPlate(licensePlateNumber);
                     System.out.println("Successfully Updated.");
-                    break;
-                default:
-                    System.out.println("Sorry Invalid Input...");
-                    break;
+                default: System.out.println("Sorry Invalid Input...");
             }
         }
     }
@@ -391,6 +379,9 @@ public class Controller {
         System.out.print("Number of cars to be rented: ");
         int numberOfCars = sc.nextInt();
         sc.nextLine();
+        System.out.print("Number of days: ");
+        int numberOfDays = sc.nextInt();
+        sc.nextLine();
         if(numberOfCars == 1)
             System.out.print("Enter the license plate number of the chosen car: ");
         else
@@ -403,6 +394,8 @@ public class Controller {
                 bindCarToCustomer(customer, car);
                 Date date = new Date();
                 car.setDateOfRent(date);
+                car.setNumberOfDays(numberOfDays);
+                car.setTotalRentPrice();
                 System.out.println("Successfully stored rent details.");
             }else{
                 System.out.println("Car is not available.");
@@ -410,4 +403,53 @@ public class Controller {
         }
     }
 
+//    public static Controller getController() throws IOException, ClassNotFoundException {
+//        ObjectInputStream objectInputStream;
+//        Controller controller = new Controller();
+//        File file = new File("cars");
+//        if(file.exists() && file.isDirectory()){
+//            File[] cars = file.listFiles();
+//            assert cars != null;
+//            for (File value : cars) {
+//                objectInputStream = new ObjectInputStream(new FileInputStream(value));
+//                Car car = (Car) objectInputStream.readObject();
+//                controller.allCars.add(car);
+//            }
+//            for (Car car: controller.allCars){
+//                if (car.getCurrentUser() == null)
+//                    controller.availableCars.add(car);
+//                else
+//                    controller.rentedCars.add(car);
+//            }
+//        }
+//        file = new File("customers");
+//        if(file.exists() && file.isDirectory()){
+//            File[] customers = file.listFiles();
+//            assert customers != null;
+//            for (File value : customers) {
+//                objectInputStream = new ObjectInputStream(new FileInputStream(value));
+//                Customer customer = (Customer) objectInputStream.readObject();
+//                controller.allCustomers.add(customer);
+//            }
+//        }
+//        return controller;
+//    }
+//    public static void saveController() {
+//        ObjectOutputStream objectOutputStream;
+//        String str;
+//        try{
+//            for (Car car: getController().availableCars){
+//                str = "cars/";
+//                objectOutputStream = new ObjectOutputStream(new FileOutputStream(str + car.getNumberPlate()+ ".txt"));
+//                objectOutputStream.writeObject(car);
+//            }
+//            for (Customer customer: getController().allCustomers){
+//                str = "customers/";
+//                objectOutputStream = new ObjectOutputStream(new FileOutputStream(str + customer.getLicenseNumber()+ ".txt"));
+//                objectOutputStream.writeObject(customer);
+//            }
+//        }catch (Exception exception){
+//            exception.printStackTrace();
+//        }
+//    }
 }

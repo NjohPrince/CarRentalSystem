@@ -1,5 +1,6 @@
 package main.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Class for keeping customer details, getting information about customer and setting up details
  */
 
-public class Customer {
+public class Customer implements Serializable {
 
     private int customerId;
     private String name;
